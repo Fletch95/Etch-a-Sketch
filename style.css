@@ -6,13 +6,16 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
+    max-width: 960px;
     border: solid black 1px;
     margin-top: 0.5em;
 }
@@ -21,4 +24,12 @@ body {
     border: solid black 1px;
     width: 6.25%;
     padding-top: 6.25%;
+}
+
+.marker {
+    background-color: black;
+}
+
+button {
+    width: 5em;
 }
