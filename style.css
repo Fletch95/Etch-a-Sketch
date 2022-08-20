@@ -22,8 +22,9 @@ body {
 
 .square {
     border: solid black 1px;
-    width: 6.25%;
-    padding-top: 6.25%;
+
+    /* width: 6.25%;
+    padding-top: 6.25%; */
 }
 
 .marker {
