@@ -1,7 +1,3 @@
-const container = document.querySelector('.container');
-const resetButton = document.querySelector('.reset');
-const sizeButton = document.querySelector('.size')
-
 // FUNCTIONS 
 
 function removeSquares() {
@@ -17,14 +13,15 @@ function removeSquares() {
 function createGrid(size) {
     if (size > 100) { size = 100 };
 
-    const squareSize = container.offsetHeight/size;
+    const borderSize = getComputedStyle(container).borderWidth.slice(0, -2);
 
+    const squareSize = (container.offsetHeight - 2 * borderSize) / size;
 
     for (let i = 0; i < size ** 2; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
         div.style.height = `${squareSize}px`;
-        
+
         div.style.width = `${squareSize}px`;
         container.appendChild(div);
     }
@@ -34,20 +31,20 @@ function detectSquares() {
     return document.querySelectorAll('.square');
 }
 
-
 function addEvents() {
     squares = detectSquares();
     squares.forEach((sqaure) => {
-    sqaure.addEventListener('mouseover', (e) => {
-        console.log("gone over!");
-        e.target.classList.add('marker');
+        sqaure.addEventListener('mouseover', (e) => {
+            e.target.classList.add('marker');
+        })
     })
-})
-
 }
 
 
 // MAIN
+const container = document.querySelector('.container');
+const resetButton = document.querySelector('.reset');
+const sizeButton = document.querySelector('.size')
 
 createGrid(16);
 addEvents();

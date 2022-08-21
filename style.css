@@ -12,11 +12,12 @@ body {
 }
 
 .container {
+    box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
-    border: solid black 0px;
+    border: solid black 20px;
     margin-top: 0.5em;
 }
 
