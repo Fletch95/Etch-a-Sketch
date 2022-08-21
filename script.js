@@ -17,11 +17,15 @@ function removeSquares() {
 function createGrid(size) {
     if (size > 100) { size = 100 };
 
+    const squareSize = container.offsetHeight/size;
+
+
     for (let i = 0; i < size ** 2; i++) {
         const div = document.createElement('div');
         div.classList.add('square');
-        div.style.paddingTop = `${100 / size}%`;
-        div.style.width = `${100 / size}%`;
+        div.style.height = `${squareSize}px`;
+        
+        div.style.width = `${squareSize}px`;
         container.appendChild(div);
     }
 }
